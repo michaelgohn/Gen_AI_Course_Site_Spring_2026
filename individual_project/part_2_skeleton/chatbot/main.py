@@ -244,7 +244,7 @@ def evaluate_responses(question: str, responses: list, comparison_type: str, jud
 
 def ensure_vector_store() -> bool:
     """Check for existing vector store; optionally build it if missing."""
-    chroma_path = Path(__file__).parent.parent / "ingestion" / "chroma_db"
+    chroma_path = Path(__file__).parent.parent / "rag_ingestion" / "chroma_db"
     expected_collections = {"python_book", "java_book", "javascript_book"}
 
     if chroma_path.exists() and any(chroma_path.iterdir()):
@@ -258,7 +258,7 @@ def ensure_vector_store() -> bool:
     if choice != "y":
         return False
 
-    ingest_script = Path(__file__).parent.parent / "ingestion" / "ingest_documents.py"
+    ingest_script = Path(__file__).parent.parent / "rag_ingestion" / "ingest_documents.py"
     print("\nBuilding vector store...")
     result = subprocess.run([sys.executable, str(ingest_script)])
     return result.returncode == 0

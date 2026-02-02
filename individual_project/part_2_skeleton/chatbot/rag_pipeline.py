@@ -33,7 +33,7 @@ if not GROQ_API_KEY:
 
 
 # Define where the chroma db vector collections are.
-CHROMA_PATH = Path(__file__).parent.parent / "ingestion" / "chroma_db"
+CHROMA_PATH = Path(__file__).parent.parent / "rag_ingestion" / "chroma_db"
 chroma_client = chromadb.PersistentClient(path=str(CHROMA_PATH))
 
 # The specific embedding model we will use
