@@ -82,7 +82,7 @@ def process_pdf(pdf_path: str, collection_name: str):
 
 
 def main():
-    source_dir = Path(__file__).parent.parent / "files"
+    source_dir = Path(__file__).parent.parent / "ingest_files"
 
     print("=" * 50)
     print("Document Ingestion Pipeline")

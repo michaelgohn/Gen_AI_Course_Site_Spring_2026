@@ -21,7 +21,7 @@ We will be using ChromaDB for this. Take a look at this page to learn more about
 4. **Comparison (optional)**: If the comparison option was selected, use model graded evaluation to compare the responses.
 
 ### Key folders and files
-- `part_2_skeleton/files/` — PDFs used for retrieval
+- `part_2_skeleton/ingest_files/` — PDFs used for retrieval
 - `part_2_skeleton/rag_ingestion/ingest_documents.py` — builds the ChromaDB vector store
 - `part_2_skeleton/chatbot/main.py` — CLI entry point and judge evaluation
 - `part_2_skeleton/chatbot/rag_pipeline.py` — routing, retrieval, generation, comparisons
