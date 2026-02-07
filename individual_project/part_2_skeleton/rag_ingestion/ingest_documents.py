@@ -41,7 +41,10 @@ def extract_text_from_pdf(pdf_path: str) -> str:
     for page_num, page in enumerate(reader.pages):
         page_text = page.extract_text()
         if page_text:
-            text += f"\n--- Page {page_num + 1} ---\n{page_text}"
+            # Setting errors="ignore" will ignore any invalid characters in the PDFs
+            clean_text = page_text.encode("utf-8", errors="ignore").decode("utf-8")
+            text += f"\n--- Page {page_num + 1} ---\n{clean_text}"
+
     return text
 
 
